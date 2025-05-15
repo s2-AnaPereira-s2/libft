@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:13:30 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:13:31 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 

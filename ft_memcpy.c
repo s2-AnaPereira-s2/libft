@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:12:14 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:12:16 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 #include <stdio.h>
+#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -15,17 +28,4 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     }
 
     return (dest);
-}
-
-int main() 
-{
-    char src[] = "Hello, World!";
-    char dest[50];
-    char *func;
-
-    func = ft_memcpy(dest, src, sizeof(src));
-
-    printf("%s", func);
-
-    return 0;
 }

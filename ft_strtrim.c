@@ -1,33 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:14:07 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:14:08 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    char *substr;
-    int i;
-
-    substr = malloc((len + 1) * sizeof(char));
-    i = 0;
-    while (len--)
-    {
-        substr[i++] = s[start++];
-    }
-    return (substr);
-}
 
 int ft_start(char const *s1, char const *set)
 {

@@ -1,20 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:12:55 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:12:56 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stddef.h>
 #include <stdlib.h>
+#include "libft.h"
 
-char *ft_strdup(char *src)
+char *ft_strdup(const char *s)
 {
     char    *src_c;
     int i;
 
     i = 0;
-    while (src[i] != '\0')
+    while (s[i] != '\0')
         i++;
     
     src_c = (char *)malloc((i + 1) * sizeof(char));
     i = 0;
-    while (src[i] != '\0')
+    while (s[i] != '\0')
     {
-        src_c[i] = src[i];
+        src_c[i] = s[i];
         i++;
     }
     src_c[i] = '\0';

@@ -1,6 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:13:02 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:13:03 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
@@ -27,12 +41,3 @@ char *ft_strjoin(char const *s1, char const *s2)
         ns[i++] = s2[j++];
     return (ns);
 }
-/*
-int main()
-{
-    char *result;
-    result = ft_strjoin("42", " Berlin");
-    printf("%s", result);
-    return (0);
-}
-*/

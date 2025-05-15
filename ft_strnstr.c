@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:13:36 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:13:37 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strnstr(char *big, char *little, int len)
+
+#include "libft.h"
+
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
 	int	j;

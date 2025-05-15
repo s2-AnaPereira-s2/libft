@@ -1,17 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:13:16 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:13:17 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strlcpy(char *dest, char *src, int n)
+
+#include "libft.h"
+#include <stddef.h>
+
+
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	int	i;
 
 	i = 0;
-    if (n > 0)
+    if (size > 0)
     {
-	    while (i <= n - 1)
+	    while (i <= size - 1)
 	    {
-	    	dest[i] = src[i];
+	    	dst[i] = src[i];
 	    	i++;
 	    }
-	    dest[i] = '\0';
+	    dst[i] = '\0';
     }
     i = 0;
     while(src[i] != '\0')

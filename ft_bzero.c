@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:01:48 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/13 21:04:20 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
+#include "libft.h"
 
-void bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    int i;
-	unsigned char *a;
+	int				i;
+	unsigned char	*a;
 
-    a = (unsigned char *)s;
+	a = (unsigned char *)s;
 	if (n > 0)
 	{
 		i = 0;

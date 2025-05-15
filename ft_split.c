@@ -1,108 +1,66 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 21:12:44 by ana-pdos          #+#    #+#             */
+/*   Updated: 2025/05/14 18:13:47 by ana-pdos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_total_words(char const *s, char c)
 {
-    char *substr;
-    int i;
+	int		total_words;
+	int		i;
 
-    substr = malloc((len + 1) * sizeof(char));
-    i = 0;
-    while (len--)
-    {
-        substr[i] = s[start];
-        i++;
-        start++;
-    }
-    substr[i] = '\0';
-    return (substr);
+	i = 0;
+	total_words = 0;
+	if (s[0] != '\0' && s[0] != c)
+		total_words++;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+		{
+			i++;
+			total_words++; 
+		}
+		else
+			i++;
+	}
+	return (total_words);
 }
 
-void *ft_memset(void *s, int c, size_t n)
+char	**ft_split(char const *s, char c)
 {
-    int i;
-    unsigned char *a;
+	char	**split;
+	int		i;
+	int		start;
+	int		end;
+	int		index;
 
-    a = (unsigned char *)s;
-    if (n > 0)
-    {
-        i = 0;
-        while (i <= n - 1)
-        {
-            a[i] = c;
-            i++;
-        }
-    }
-    else
-        return (s);
-    return (s);
+	split = ft_calloc(ft_total_words(s, c) + 1, sizeof(char *));
+	if (!split)
+		return (NULL);
+	i = 0;
+	index = 0;
+	while (s[i])
+	{
+		while (s[i] == c) 
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		end = i;
+		split[index++] = ft_substr(s, start, end - start);
+	}
+	return (split);
 }
 
-void *ft_calloc(size_t nmemb, size_t size)
-{   
-    void* ptr = malloc(nmemb * size);
-
-    if (ptr == NULL)
-        return (NULL);
-
-    ft_memset(ptr, 0, nmemb * size);
-
-    return (ptr);
-}
-
-char **ft_split(char const *s, char c)
-{
-    char **split;
-
-    int i;
-    int j;
-    int len;
-    int *indexes;
-    int nmemb;
-
-    i = 0;
-    j = 0;
-    indexes = malloc(12 * sizeof(int));
-    while(s[i] != '\0')
-    {
-        if(s[i] == c)
-        {
-            indexes[j] = i;
-            i++;
-            j++; 
-        }
-        else
-            i++;
-    }
-    split = ft_calloc(j, sizeof(int));
-    i = 1;
-    len = 0;
-    split[0] = ft_substr(s, 0, (indexes[0] + 1));
-    while (i <= j)
-    {
-        len = (indexes[i] - indexes[i - 1]);
-        split[i] = ft_substr(s, ((indexes[i] - len) + 1), len);
-        i++;
-        j--;
-    }
-    i = 0;
-    while(split[i] != '\0')
-    {
-      j = 0;
-      while(split[i][j] != '\0')
-      {
-        printf("%c", split[i][j]);
-        j++;
-      }
-      i++;
-      printf("%c", ',');
-    }
-    return (0);
-}
-
-int main()
-{
-    ft_split("Ana Paula dos Santos Pereira", 'a');
-}
