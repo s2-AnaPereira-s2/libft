@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:13:16 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:13:17 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 19:47:31 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
     if (size > 0)
@@ -27,10 +27,12 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 	    	dst[i] = src[i];
 	    	i++;
 	    }
-	    dst[i] = '\0';
     }
+	dst[i] = '\0';
     i = 0;
     while(src[i] != '\0')
-        i++;
+	{
+		i++;
+	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:13:02 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:13:03 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 19:50:21 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ char *ft_strjoin(char const *s1, char const *s2)
     ns = malloc((i + 1) * sizeof(char));
     i = 0;
     while(s1[i] != '\0')
-        ns[i++] = s1[i];
+    {
+        ns[i] = s1[i];
+        i++;
+    }
     j = 0;
     while(s2[j] != '\0')
         ns[i++] = s2[j++];

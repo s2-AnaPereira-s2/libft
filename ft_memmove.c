@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:12:22 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:12:24 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 15:36:38 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     s = (unsigned char *)src;
     d = (unsigned char *)dest;
 
+    if (!dest && !src)
+        return (NULL);
     if (d < s)
     {
         while (n--)

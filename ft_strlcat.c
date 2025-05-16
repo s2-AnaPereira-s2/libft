@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:13:09 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:13:10 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:50:24 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	    	i++;
 	    	j++;
 	    }
-	    dst[i] = '\0';
     }
+	dst[i] = '\0';
     i = 0;
     while(dst[i] != '\0')
-        i++;
+		i++;
 	return (i);
 }

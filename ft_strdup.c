@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:12:55 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:12:56 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 18:23:14 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char *ft_strdup(const char *s)
         i++;
     
     src_c = (char *)malloc((i + 1) * sizeof(char));
+    if (!src_c)
+        return (NULL);
     i = 0;
     while (s[i] != '\0')
     {

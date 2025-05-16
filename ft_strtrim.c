@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:14:07 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:14:08 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:04:11 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "libft.h"
 
 
-int ft_start(char const *s1, char const *set)
+int ft_start(const char *s1, const char *set)
 {
     int start;
     int j;
@@ -41,7 +41,7 @@ int ft_start(char const *s1, char const *set)
     return (start);
 }
 
-int ft_end(char const *s1, char const *set)
+int ft_end(const char *s1, const char *set)
 {
     int end;
     int j;
@@ -64,7 +64,7 @@ int ft_end(char const *s1, char const *set)
     return (end);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char *ft_strtrim(const char *s1, const char *set)
 {
     int start;
     int end;

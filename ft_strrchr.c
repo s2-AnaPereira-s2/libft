@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:13:44 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:13:45 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:56:13 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_strrchr(const char *s, int c)
 	while(i >= 0)
 	{
 		if (s[i] == c)
-			return (s[i]);
+			return (char *)&s[i];
 		else
 			i--;
 	}
-	return (0);
+	return((char *)s);
 }

@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:12:30 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:12:33 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:47:50 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void *ft_memset(void *s, int c, size_t n)
 {
-	int i;
+	size_t i;
 	unsigned char *a;
 
     a = (unsigned char *)s;
