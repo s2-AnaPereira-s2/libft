@@ -6,36 +6,36 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:13:09 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/16 14:50:24 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:14:54 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 #include <stddef.h>
 
-
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 
 	i = 0;
-	j = 0;
-    if (size > 0)
-    {
-	    while (dst[i] != '\0')
-	    	i++;
-	    while (src[j] != '\0')
-	    {
-	    	dst[i] = src[j];
-	    	i++;
-	    	j++;
-	    }
-    }
-	dst[i] = '\0';
-    i = 0;
-    while(dst[i] != '\0')
+	while (dst[i] != '\0' && i < size)
 		i++;
-	return (i);
+	dst_len = i;
+	src_len = ft_strlen(src);
+	if (dst_len >= size)
+		return (size + src_len);
+	if (size > 0)
+	{
+		j = 0;
+		while (src[j] && (dst_len + j < size - 1))
+		{
+			dst[dst_len + j] = src[j];
+			j++;
+		}
+		dst[dst_len + j] = '\0';
+	}
+	return (dst_len + src_len);
 }

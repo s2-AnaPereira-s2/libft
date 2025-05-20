@@ -6,14 +6,11 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:12:44 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/14 18:13:47 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:48:09 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stddef.h>
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
 int	ft_total_words(char const *s, char c)
@@ -51,16 +48,18 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	index = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		while (s[i] == c) 
+		while (s[i] == c && s[i] != '\0') 
 			i++;
 		start = i;
+		if (start == (int)ft_strlen(s))
+			break ;
 		while (s[i] && s[i] != c)
 			i++;
 		end = i;
 		split[index++] = ft_substr(s, start, end - start);
 	}
+	split[index] = NULL;
 	return (split);
 }
-

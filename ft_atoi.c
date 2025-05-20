@@ -6,18 +6,35 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:00:50 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:01:29 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/19 22:04:36 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nbr)
 {
 	int	result;
+	int	sign;
 
+	sign = 1;
 	result = 0;
-	while (*nptr >= '0' && *nptr <= '9')
-		result = result * 10 + (*nptr++ - '0');
-	return (result);
+	while (*nbr)
+	{
+		while (*nbr == ' ' || (*nbr >= 9 && *nbr <= 13))
+			nbr++;
+		if (*nbr == '+' || *nbr == '-')
+		{
+			if (*nbr == '-')
+				sign = -1;
+			nbr++;
+		}
+		while (*nbr >= '0' && *nbr <= '9')
+		{
+			result = (result * 10 + (*nbr++ - '0'));
+		}
+		return (result * sign);
+	}
+	return (result * sign);
 }

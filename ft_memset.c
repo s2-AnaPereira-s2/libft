@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:12:30 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/16 14:47:50 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:59:37 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t i;
-	unsigned char *a;
+	size_t			i;
+	unsigned char	*a;
 
-    a = (unsigned char *)s;
+	a = (unsigned char *)s;
 	if (n > 0)
 	{
 		i = 0;

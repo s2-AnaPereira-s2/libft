@@ -6,16 +6,16 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:40:17 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/16 17:14:50 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 20:59:08 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    char	number;
+	char	number;
 
 	if (n == -2147483648)
 		write (fd, "-2147483648", 11);
@@ -23,7 +23,7 @@ void ft_putnbr_fd(int n, int fd)
 	{
 		if (n < 0)
 		{
-			write(fd, "-", 1);
+			write (fd, "-", 1);
 			n = -n;
 		}
 		if (n > 9)

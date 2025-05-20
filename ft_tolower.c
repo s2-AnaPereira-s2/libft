@@ -6,20 +6,17 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:14:21 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/13 21:14:22 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:12:46 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 int	ft_tolower(int c)
 {
-
 	if (c >= 65 && c <= 90)
 	{
 		c = c + 32;
 	}
-	
 	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:40:07 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/16 19:20:56 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:54:43 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 	size = ft_length(n);
 	number = malloc((size + 1) * sizeof(char));
 	if (!number)
-		return(NULL);
+		return (NULL);
 	number[size] = '\0';
 	if (n == -2147483648)
 		number = ft_intmin(number);
@@ -73,4 +73,3 @@ char	*ft_itoa(int n)
 	}
 	return (number);
 }
-

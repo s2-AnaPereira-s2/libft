@@ -6,22 +6,22 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:37:36 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/16 16:56:56 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:04:39 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write(fd, &s[i], 1);
+		write (fd, &s[i], 1);
 		i++;
 	}
-	write(fd, "\n", 1);
+	write (fd, "\n", 1);
 }
