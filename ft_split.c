@@ -6,14 +6,14 @@
 /*   By: ana-pdos <ana-pdos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 21:12:44 by ana-pdos          #+#    #+#             */
-/*   Updated: 2025/05/20 15:48:09 by ana-pdos         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:23:43 by ana-pdos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_total_words(char const *s, char c)
+static int	ft_total_words(char const *s, char c)
 {
 	int		total_words;
 	int		i;
@@ -35,30 +35,52 @@ int	ft_total_words(char const *s, char c)
 	return (total_words);
 }
 
+static int	ft_start(char const *s, char c, int i)
+{
+	while (s[i] == c && s[i] != '\0') 
+		i++;
+	return (i);
+}
+
+static int	ft_end(char const *s, char c, int start)
+{
+	while (s[start] && s[start] != c)
+		start++;
+	return (start);
+}
+
+static char	**ft_free_split(char **split, int index)
+{
+	while (--index >= 0)
+	{
+		free(split[index]);
+	}
+	free(split);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int		i;
 	int		start;
-	int		end;
 	int		index;
+	int		i;
 
 	split = ft_calloc(ft_total_words(s, c) + 1, sizeof(char *));
 	if (!split)
 		return (NULL);
-	i = 0;
 	index = 0;
+	i = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c && s[i] != '\0') 
-			i++;
-		start = i;
+		start = ft_start(s, c, i);
 		if (start == (int)ft_strlen(s))
 			break ;
-		while (s[i] && s[i] != c)
-			i++;
-		end = i;
-		split[index++] = ft_substr(s, start, end - start);
+		i = ft_end(s, c, start);
+		split[index] = ft_substr(s, start, i - start);
+		if (!split[index])
+			return (ft_free_split(split, index));
+		index++;
 	}
 	split[index] = NULL;
 	return (split);
